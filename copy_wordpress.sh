@@ -20,7 +20,7 @@ rm /var/www/$NEWDOMAIN/htdocs/wp-config.php
 
 # 5. Export the database from the old site
 cd /var/www/$OLDDOMAIN/htdocs
-wp db export ${OLDDOMAIN}.sql --allow-root
+wp db export ${OLDDOMAIN}.sql --allow-root --skip-definer
 
 # 6. Import the database to the new site
 cp /var/www/$OLDDOMAIN/htdocs/${OLDDOMAIN}.sql /var/www/$NEWDOMAIN/htdocs/
